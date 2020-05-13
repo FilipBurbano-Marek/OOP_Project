@@ -4,26 +4,18 @@
 #include <iostream>
 #include <fstream>
 
-<<<<<<< HEAD
 BaseTask::BaseTask()
 {
 
 }
 
 BaseTask::BaseTask(std::string n, std::string d, std::string u, std::string g)
-=======
-BaseTask::BaseTask(std::string n, std::string d, std::string u, int g)
->>>>>>> 495b627ade366d14dbda5a66b935cae4a848d75a
 {
 	name = n;
 	description = d;
 	unit = u;
 	goal = g;
-<<<<<<< HEAD
 	progress = '0';
-=======
-	progress = 0;
->>>>>>> 495b627ade366d14dbda5a66b935cae4a848d75a
 }
 
 void BaseTask::printStatus()

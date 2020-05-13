@@ -9,7 +9,6 @@ int main (int argc, char *argv[])
 {
 	std::vector<BaseTask> tasks;
 
-<<<<<<< HEAD
 	BaseTask task;
 
 	std::fstream data;
@@ -49,15 +48,6 @@ int main (int argc, char *argv[])
 	}
 
 	data.close();
-=======
-	std::fstream data;
-	data.open("data.txt");
-	while (!data.eof())
-	{
-	
-	}
-
->>>>>>> 495b627ade366d14dbda5a66b935cae4a848d75a
 
 	//main loop
 	return 1;
