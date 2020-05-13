@@ -3,21 +3,37 @@
 
 #include <string>
 
-
-class BaseTask
+class Activity
 {
-	public:
+	protected:
 		std::string name;
+		int progress;
+	public:
+		Activity();
+		Activity(std::string);
+		void addProgress(int);
+		void setName(std::string);
+		void setProgress(int);
+
+};
+
+
+class BaseTask : public Activity
+{
+	protected:
 		std::string description;
 		std::string unit;
-		std::string progress;
-		std::string goal;
-
-		BaseTask(std::string n, std::string desc, std::string u, std::string g); // name, desc, unit, goal
+		int goal;
+		std::string date;
+	public:
+		BaseTask(std::string, std::string, std::string, int, std::string); // name, desc, unit, goal
 		BaseTask();
 		void printStatus();
-		void addProgress(int count);
 		void saveToFile();
+		void setDescription(std::string);
+		void setUnit(std::string);
+		void setGoal(int);
+		void setDate(std::string);
 
 };
 

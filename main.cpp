@@ -22,26 +22,28 @@ int main (int argc, char *argv[])
 
 			getline(data, line);
 			if (line == "") break;
-			task.name = line;
+			task.setName(line);
 	
 			getline(data, line);
-			task.description = line;
+			task.setDescription(line);
 	
 			getline(data, line);
-			task.unit = line;
+			task.setUnit(line);
 		
 			getline(data, line);
-			task.progress = line;
+			task.setProgress(std::stoi(line));
 	
 			getline(data, line);
-			task.goal = line;
+			task.setGoal(std::stoi(line));
+
+			getline(data, line);
+			task.setDate(line);
 	
 			tasks.push_back(task);
 	
 			//debug
-			std::cout << "Task import success, printing content: \n";
+			std::cout << "Imported task content: \n";
 			task.printStatus();
-			//debug end
 	
 		}
 
@@ -49,6 +51,21 @@ int main (int argc, char *argv[])
 
 	data.close();
 
+	//debug
+	std::cout << "Loaded " << tasks.size() << " tasks.\n\n";
+	
+	tasks[0].setName("lul");
+	tasks[0].setDescription("asdasd");
+	tasks[0].setProgress(16);
+	tasks[0].addProgress(100);
+	tasks[0].setUnit("times");
+	tasks[0].setGoal(117);
+	tasks[0].setDate("date");
+	tasks[0].printStatus();
+
 	//main loop
 	return 1;
 }
+
+
+
